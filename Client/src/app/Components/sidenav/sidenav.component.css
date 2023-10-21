@@ -1,0 +1,11 @@
+.do {
+  height: fit-content;
+  font-size: 19px;
+}
+
+.move{
+  position: absolute;
+  top:20px;
+  font-size: 30px;
+  margin-left: 5px;
+}

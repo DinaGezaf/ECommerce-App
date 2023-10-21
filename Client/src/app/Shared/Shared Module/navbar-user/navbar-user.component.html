@@ -1,0 +1,51 @@
+<div class="navbar">
+  <div class="container">
+    <div class="logo"></div>
+    <div class="links">
+      <ul class="first-ul">
+        <li>
+          <a [routerLink]="['/']" routerLinkActive="router-link-active">
+            Home</a
+          >
+        </li>
+        <li>
+          <a (click)="isLoggedIn()">Shop</a>
+        </li>
+      </ul>
+      <ul class="center-ul">
+        <li class="fs-4">Helendo</li>
+      </ul>
+      <ul class="second-ul">
+        <li>
+          <a
+            [matMenuTriggerFor]="menu"
+            aria-label="Example icon-button with a menu"
+            ><span>Account</span>
+            <mat-icon>account_circle</mat-icon>
+          </a>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="openEditor()">
+              <mat-icon>person</mat-icon>
+              <span>Sign In</span>
+            </button>
+            <button mat-menu-item (click)="openRegisterUser()">
+              <mat-icon>person_outline</mat-icon>
+              <span>Sign Up</span>
+            </button>
+          </mat-menu>
+        </li>
+      </ul>
+      <ul class="third-ul">
+        <li *ngIf="isLogged">
+          <a
+            class="nav-link"
+            mat-icon-button
+            color="primary"
+            (click)="onLogout()"
+            >Logout<mat-icon>exit_to_app</mat-icon></a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

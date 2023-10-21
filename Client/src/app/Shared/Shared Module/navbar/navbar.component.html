@@ -1,0 +1,79 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
+  <div class="container">
+    <a class="navbar-brand" href="#"
+      ><span
+        ><img
+          src="assets/Images/Admin/images.jfif"
+          alt="mdo"
+          width="24"
+          height="24"
+          class="rounded-circle"
+      /></span>
+      Admin</a
+    >
+    <button
+      class="navbar-toggler collapsed"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarsExample09"
+      aria-controls="navbarsExample09"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="d-flex justify-content-center">
+      <div
+        class="collapse navbar-collapse justify-content-md-center"
+        id="navbarsExample08"
+      >
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item px-3">
+            <a
+              class="nav-link"
+              [routerLink]="['products']"
+              routerLinkActive="text-primary border-bottom border-primary"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Products</a
+            >
+          </li>
+          <li class="nav-item px-3">
+            <a
+              class="nav-link"
+              [routerLink]="['addProduct/new']"
+              routerLinkActive="text-primary border-bottom border-primary"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >New Product</a
+            >
+          </li>
+          <li class="nav-item px-3">
+            <a class="nav-link" href="#"
+              ><mat-icon>favorite_border</mat-icon></a
+            >
+          </li>
+
+          <li class="nav-item px-3">
+            <a class="nav-link" matBadge="1"
+              ><mat-icon>notifications</mat-icon></a
+            >
+          </li>
+          <li class="nav-item px-3">
+            <a
+            class="nav-link"
+              [matMenuTriggerFor]="menu"
+              aria-label="Example icon-button with a menu"
+            >
+              <mat-icon>person</mat-icon>
+          </a>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item (click)="logout()">
+                <mat-icon>lock</mat-icon>
+                <span>Log out</span>
+              </button>
+            </mat-menu>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

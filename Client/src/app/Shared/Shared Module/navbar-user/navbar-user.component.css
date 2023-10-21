@@ -1,0 +1,99 @@
+a {
+  text-decoration: none;
+
+}
+
+
+.navbar {
+  position: absolute;
+  top: 15px;
+  width: 100%;
+  z-index: 1;
+
+}
+
+.links {
+  width: 100%;
+  display: flex;
+
+}
+
+.links a {
+  position: relative;
+}
+
+.links a:after {
+  content: '';
+  width: 0%;
+  border-bottom: .5px solid #2c2c2c;
+  position: absolute;
+  top: 28px;
+  left: 1px;
+  transition: 0.5s;
+}
+
+.first-ul a:hover::after, .second-ul a:hover::after {
+  width: 100%;
+
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+}
+
+.first-ul {
+  width: 25%;
+}
+
+.center-ul {
+  width: 35%;
+  justify-content: center;
+}
+
+.center-ul img {
+  width: 100px;
+}
+
+.second-ul {
+  width: 30%;
+  position: relative;
+}
+
+.third-ul {
+  width: 30%;
+  position: relative
+}
+
+ul li {
+  padding: 20px 40px 20px 0px;
+}
+
+li a {
+  color: #2c2c2c;
+  font-size: 18px;
+  letter-spacing: .025em;
+}
+
+.li-counter {
+  position: relative;
+}
+
+.counter {
+  background-color: #2c2c2c;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: absolute;
+  right: 30px;
+  top: 11.5px;
+  color: #FFF;
+  font-size: 9px;
+  text-align: center;
+  padding: 1px;
+  cursor: pointer;
+}
+
+mat-icon {
+  cursor: pointer;
+}

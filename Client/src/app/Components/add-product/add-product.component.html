@@ -1,0 +1,124 @@
+<div
+  class="container my-5 shadow-lg p-5 bg-body-tertiary rounded w-50 d-flex justify-content-center"
+>
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit($event)">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        formControlName="name"
+        placeholder="Name"
+      />
+      <div
+        class="text-danger p-1"
+        *ngIf="
+          productForm.get('name')?.invalid &&
+          (productForm.get('name')?.dirty || productForm.get('name')?.touched)
+        "
+      >
+        Please provide a valid Name.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="category" class="form-label">Category </label>
+      <select
+        class="drop-down m-5 p-2 w-50 bg-dark text-light rounded"
+        formControlName="category"
+      >
+        <ng-container *ngFor="let item of categories">
+          <option>
+            <button class="dropdown-item">
+              {{ item }}
+            </button>
+          </option>
+        </ng-container>
+      </select>
+      <div
+        class="text-danger p-1"
+        *ngIf="
+          productForm.get('category')?.invalid &&
+          (productForm.get('category')?.dirty ||
+            productForm.get('category')?.touched)
+        "
+      >
+        Please Choose Category for The Product.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="price" class="form-label">Price</label>
+      <input
+        type="text"
+        class="form-control"
+        id="price"
+        formControlName="price"
+        placeholder="Product Price"
+      />
+      <div
+        class="text-danger p-1"
+        *ngIf="
+          productForm.get('price')?.invalid &&
+          (productForm.get('price')?.dirty || productForm.get('price')?.touched)
+        "
+      >
+        Please provide a valid Price.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="minimumQuantity" class="form-label">Minimum Quantity</label>
+      <input
+        type="text"
+        class="form-control"
+        id="minimumQuantity"
+        formControlName="minimumQuantity"
+        placeholder="Product Minimum Quantity"
+      />
+      <div
+        class="text-danger p-1"
+        *ngIf="
+          productForm.get('minimumQuantity')?.invalid &&
+          (productForm.get('minimumQuantity')?.dirty ||
+            productForm.get('minimumQuantity')?.touched)
+        "
+      >
+        Please provide a valid Minimum Quantity.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="discountRate" class="form-label">Discount Rate</label>
+      <input
+        type="text"
+        class="form-control"
+        id="discountRate"
+        formControlName="discountRate"
+        placeholder="Product Discount Rate"
+      />
+      <div
+        class="text-danger p-1"
+        *ngIf="
+          productForm.get('discountrate')?.invalid &&
+          (productForm.get('discountrate')?.dirty ||
+            productForm.get('discountrate')?.touched)
+        "
+      >
+        Please provide a valid Discount Rate.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="imagePath" class="form-label">Image</label>
+      <input
+        class="form-control"
+        #imageInput
+        type="file"
+        formControlName="imagePath"       
+        (change)="handleFileInput($event)"
+      />
+    </div>
+    <div class="text-center m-4 p-4">
+      <button type="submit" class="btn btn-primary">
+        {{ productCode ? "Edit Product" : "Add Product" }}
+      </button>
+    </div>
+  </form>
+</div>

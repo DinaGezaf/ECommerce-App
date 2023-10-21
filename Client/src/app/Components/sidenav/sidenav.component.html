@@ -1,0 +1,48 @@
+<mat-sidenav-container fullscreen>
+  <app-navbar> </app-navbar>
+  <mat-icon (click)="sidenav.toggle()" class="sidenav-menu move text-light"
+    >menu</mat-icon
+  >
+
+  <mat-sidenav
+    #sidenav
+    mode="side"
+    class="example-sidenav"
+    [ngStyle]="{ 'width.em': sidenavWidth }"
+    opened="true"
+    (mouseenter)="increase()"
+    (mouseleave)="decrease()"
+  >
+    <div class="d-flex justify-content-center my-3">
+      <img
+        src="assets/Images/Admin/images.jfif"
+        alt="mdo"
+        width="24"
+        height="24"
+        class="rounded-circle"
+      />
+    </div>
+    <mat-nav-list>
+      <mat-list-item routerLink="products" routerLinkActive="active">
+        <mat-icon mat-list-icon>apps</mat-icon>
+        <span *ngIf="sidenavWidth > 6" class="do px-2">Products</span>
+      </mat-list-item>
+      <mat-list-item routerLink="addProduct/new" routerLinkActive="active">
+        <span *ngIf="sidenavWidth > 6" class="do px-2">
+          <a
+            *ngIf="sidenavWidth > 6"
+            class="do px-2"
+            class="nav-link"
+            [routerLink]="['addProduct/new']"
+            ><mat-icon mat-list-icon>add_circle</mat-icon>New Product</a
+          ></span
+        >
+      </mat-list-item>
+    </mat-nav-list>
+    <mat-nav-list> </mat-nav-list>
+  </mat-sidenav>
+
+  <div class="example-sidenav-content">
+    <router-outlet></router-outlet>
+  </div>
+</mat-sidenav-container>

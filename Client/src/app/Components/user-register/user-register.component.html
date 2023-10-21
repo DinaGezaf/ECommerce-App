@@ -1,0 +1,44 @@
+<div class="container bg-light pb-2">
+  <div class="d-flex justify-content-center">
+    <img src="assets/Images/Logos/r.png" width="215px" height="215px" />
+  </div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <input
+      class="field"
+      type="text"
+      placeholder="User Name"
+      formControlName="username"
+    />
+    <span
+      *ngIf="form.get('username')?.invalid && form.get('username')?.touched"
+      style="color: rgb(202, 69, 69)"
+      >you should enter valid user name</span
+    >
+
+    <input
+      class="field"
+      type="email"
+      placeholder="User Email"
+      formControlName="email"
+    />
+    <span
+      *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
+      style="color: rgb(202, 69, 69)"
+      >you should enter valid email</span
+    >
+
+    <input
+      class="field"
+      type="password"
+      placeholder="Password"
+      formControlName="password"
+    />
+    <span
+      *ngIf="form.get('password')?.invalid && form.get('password')?.touched"
+      style="color: rgb(202, 69, 69)"
+      >you should enter valid password</span
+    >
+
+    <button type="submit">Sign Up</button>
+  </form>
+</div>

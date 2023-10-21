@@ -1,0 +1,65 @@
+<section class="products mb-5 pb-5">
+  <div class="container">
+    <div class="row my-5">
+      <div class="col-md-6">
+        <h2>Popular Products</h2>
+      </div>
+      <ul class="list-unstyled col-md-6 ps-2 d-flex">
+        <li
+          (click)="getProductsData('all products')"
+          [ngClass]="{ active: active == 'all products' }"
+        >
+          All products&nbsp; &nbsp;|
+        </li>
+        <li
+          (click)="getProductsData('Accessories')"
+          [ngClass]="{ active: active == 'Accessories' }"
+        >
+          &nbsp; &nbsp;Accessories&nbsp; &nbsp;|
+        </li>
+        <li
+          (click)="getProductsData('Chair')"
+          [ngClass]="{ active: active == 'Chair' }"
+        >
+          &nbsp; &nbsp; Chair &nbsp; &nbsp;|
+        </li>
+        <li
+          (click)="getProductsData('Decoration')"
+          [ngClass]="{ active: active == 'Decoration' }"
+        >
+          &nbsp; &nbsp; Decoration&nbsp; &nbsp;|
+        </li>
+        <li
+          (click)="getProductsData('Furniture')"
+          [ngClass]="{ active: active == 'Furniture' }"
+        >
+          &nbsp; &nbsp; Furniture&nbsp; &nbsp;|
+        </li>
+        <li
+          (click)="getProductsData('Table')"
+          [ngClass]="{ active: active == 'Table' }"
+        >
+          &nbsp; &nbsp;Table
+        </li>
+      </ul>
+    </div>
+    <div class="row">
+      <div *ngFor="let product of products" class="col-md-3 my-5">
+        <div
+          routerLink="product/details/{{ product.productCode }}"
+          class="product"
+          (click)="getProduct(product.productCode)"
+        >
+          <img
+            src="assets/Images/Products/{{ product.imagePath }}"
+            style="max-width: 100%; height: 300px"
+          />
+          <div class="text-center lead pt-2">
+            <p class="product-title">{{ product.name }}</p>
+            <span class="product-price">{{ product.price }}$</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
